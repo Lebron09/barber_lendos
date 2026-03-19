@@ -1124,6 +1124,28 @@ body {
   color: var(--accent);
 }
 
+#flow-finish-btn {
+  position: relative;
+  min-width: 280px;
+  border: 1px solid rgba(123, 224, 191, 0.55);
+  background: linear-gradient(135deg, #7be0bf 0%, #55c9a5 55%, #3bbd96 100%);
+  color: #04100b;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+  box-shadow: 0 16px 34px rgba(59, 189, 150, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.55);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
+}
+
+#flow-finish-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 22px 40px rgba(59, 189, 150, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.65);
+  filter: saturate(1.05);
+}
+
+#flow-finish-btn:active {
+  transform: translateY(0);
+}
+
 /* Step 4: Success Message */
 .success-message {
   text-align: center;
@@ -1212,6 +1234,11 @@ body {
   .flow-step {
     padding: 20px;
   }
+
+  #step-2 {
+    justify-content: flex-start;
+    padding-top: max(88px, env(safe-area-inset-top));
+  }
   
   .flow-title {
     font-size: clamp(24px, 8vw, 32px);
@@ -1254,6 +1281,14 @@ body {
     width: 100%;
     min-width: 0;
   }
+
+  #flow-finish-btn {
+    width: 100%;
+    min-width: 0;
+    margin-top: 24px !important;
+    font-size: 14px;
+    padding: 15px 18px;
+  }
   
   .success-message {
     padding: 40px 20px;
@@ -1293,6 +1328,11 @@ body {
   .flow-booking-container {
     padding: 16px 12px;
     gap: 20px;
+  }
+
+  #flow-finish-btn {
+    font-size: 13px;
+    letter-spacing: 0.5px;
   }
 
   .slots-grid {
