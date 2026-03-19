@@ -929,6 +929,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow-x: hidden;
   overflow-y: auto;
   transition: opacity 0.8s ease, visibility 0.8s ease;
   background-image:
@@ -954,6 +955,9 @@ body {
   transition: opacity 0.6s ease, transform 0.6s ease;
   transform: translateY(20px);
   padding: 40px;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 .flow-step.active {
@@ -1000,6 +1004,7 @@ body {
   gap: 30px;
   flex-wrap: wrap;
   justify-content: center;
+  width: 100%;
   max-width: 1200px;
 }
 
@@ -1064,6 +1069,7 @@ body {
   backdrop-filter: blur(12px);
   flex-wrap: wrap;
   justify-content: center;
+  width: min(100%, 900px);
   max-width: 900px;
 }
 
@@ -1213,11 +1219,16 @@ body {
   }
   
   .barbers-grid {
-    gap: 16px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    width: min(100%, 520px);
+    margin: 0 auto;
   }
   
   .barber-card {
-    width: calc(50% - 8px); /* 2 карточки в ряд на планшетах/больших телефонах */
+    width: 100%;
+    min-width: 0;
     padding: 12px;
   }
   
@@ -1234,12 +1245,14 @@ body {
   }
   
   .flow-booking-container {
+    width: 100%;
     padding: 24px 16px;
     gap: 32px;
   }
   
   .flow-services, .flow-calendar {
     width: 100%;
+    min-width: 0;
   }
   
   .success-message {
@@ -1260,13 +1273,35 @@ body {
 
 @media (max-width: 480px) {
   /* Очень узкие экраны */
+  .flow-step {
+    padding: 16px;
+  }
+
+  .flow-title {
+    font-size: clamp(22px, 7.2vw, 28px);
+  }
+
+  .barbers-grid {
+    grid-template-columns: 1fr;
+    width: min(100%, 320px);
+  }
+
   .barber-card {
     width: 100%;
-    max-width: 280px;
   }
   
+  .flow-booking-container {
+    padding: 16px 12px;
+    gap: 20px;
+  }
+
   .slots-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+
+  .calendar-grid {
+    gap: 6px;
   }
 }
 
