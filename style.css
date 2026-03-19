@@ -1237,6 +1237,9 @@ body {
 
   #step-2 {
     justify-content: flex-start;
+    align-items: stretch;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
     padding-top: max(88px, env(safe-area-inset-top));
   }
   
@@ -1246,11 +1249,12 @@ body {
   }
   
   .barbers-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    display: flex;
+    flex-direction: column;
     gap: 12px;
-    width: min(100%, 520px);
-    margin: 0 auto;
+    width: 100%;
+    max-width: none;
+    margin: 0;
   }
   
   .barber-card {
@@ -1317,8 +1321,7 @@ body {
   }
 
   .barbers-grid {
-    grid-template-columns: 1fr;
-    width: min(100%, 320px);
+    width: 100%;
   }
 
   .barber-card {
